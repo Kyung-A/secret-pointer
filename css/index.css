@@ -1,0 +1,260 @@
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'SUIT-Regular';
+    letter-spacing: -30px;
+    overflow: hidden;
+}
+
+#content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    min-width: 1280px;
+    z-index: 5;
+    overflow: hidden;
+
+    h1 {
+        font-size: 15rem;
+        text-align: center;
+        line-height: 1.2;
+    }
+}
+
+#pointer {
+    position: relative;
+    width: 200vw;
+    height: 200vh;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: black;
+    mask-image: radial-gradient(circle at 100px 100px, transparent 100px, #000 100px);
+    transition: background 0.5s ease;
+}
+
+.text-ani-1 {
+    display: inline-block;
+    animation: shake 0.3s infinite;
+}
+
+.text-ani-2 {
+    display: inline-block;
+
+    &::after {
+        content: "";
+        animation: chang-text 2s infinite;
+    }
+
+    &::first-letter {
+        font-weight: 600;
+        color: rgb(210, 255, 10)
+    }
+}
+
+.text-ani-3 {
+    display: inline-block;
+    width: 130px;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 3px;
+    animation: fill-text-color 2s infinite;
+}
+
+#dinosaur {
+    position: absolute;
+    width: 80px;
+    img {
+        width: 100%;
+    }
+}
+
+#dinosaur-click {
+    position: absolute;
+    width: 50px;
+    z-index: 15;
+    cursor: pointer;
+    img {
+        width: 100%;
+        opacity: 0%;
+    }
+}
+
+#hello-world {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    opacity: 0;
+    transition: all 0.3s;
+
+    .speech-bubble {
+        width: 250px;
+        transform: translate(-230px, 100px);
+
+        img {
+            width: 100%;
+        }
+    }
+    .dinosaur {
+        width: 500px;
+        margin-left: 150px;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+
+    10% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    100% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+}
+
+@keyframes chang-text {
+    0% {
+        content: "보이시나";
+    }
+
+    25% {
+        content: "이시나보";
+    }
+
+    50% {
+        content: "시나보이";
+    }
+
+    75% {
+        content: "나보이시";
+    }
+
+    100% {
+        content: "보이시나";
+    }
+}
+
+@keyframes fill-text-color {
+    0% {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 200px, rgb(0, 225, 255) 100px);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    10% {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 180px, rgb(0, 225, 255) 100px);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    20% {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 160px, rgb(0, 225, 255) 100px);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    30% {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 140px, rgb(0, 225, 255) 100px);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    40% {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 120px, rgb(0, 225, 255) 100px);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    50% {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 100px, rgb(0, 225, 255) 100px);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    60% {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 80px, rgb(0, 225, 255) 50px);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    70% {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60px, rgb(0, 225, 255) 50px);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    80% {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40px, rgb(0, 225, 255) 50px);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    90% {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 20px, rgb(0, 225, 255) 50px);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    100% {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 200px, rgb(0, 225, 255) 100px);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+}
