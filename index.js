@@ -1,17 +1,16 @@
 const pointer = document.getElementById("pointer");
-const dinosaur = document.getElementById("dinosaur");
-const dinosaurClick = document.getElementById("dinosaur-click");
-// const resultContent = document.getElementById("hello-world");
+const dinosaur = document.querySelector(".dinosaur");
+const dinosaurClick = document.querySelector(".dinosaur-click");
 
 const position = [
-  ["128px", "576px", "80px", "initial"],
-  ["408px", "1024px", "100px", "initial"],
-  ["480px", "80px", "150px", "scale(-1, 1)"],
-  ["-192px", "1280px", "350px", "rotate(-180deg) scale(-1, 1)"],
-  ["32px", "-192px", "350px", "scale(-1, 1)"],
-  ["600px", "1328px", "350px", "initial"],
-  ["160px", "904px", "80px", "initial"],
-  ["560px", "480px", "80px", "scale(-1, 1)"],
+  "margin-top: -160px; margin-right: -750px; width: 80px; transform: initial;",
+  "margin-top: -290px; margin-left: -850px; width: 280px; transform: scale(-1, 1);",
+  "margin-bottom: -430px; margin-left: -210px; width: 80px; transform: initial;",
+  "margin-right: -220px;  margin-bottom: -410px; width: 80px; transform: scale(-1, 1);",
+  "margin-left: -1580px;  margin-top: -300px; width: 350px; transform: scale(-1, 1);",
+  "margin-right: -1580px;  margin-bottom: -300px; width: 350px; transform: initial;",
+  "margin-right: -1300px;  margin-top: -750px; width: 350px; transform: rotate(-180deg) scale(-1, 1);",
+  "margin-left: -1000px;  margin-top: 50px; width: 80px; transform: scale(-1, 1);",
 ];
 
 let mouseY;
@@ -22,24 +21,24 @@ document.addEventListener("mousemove", (e) => {
   if (stopMouse) {
     e.stopPropagation();
   } else {
-    mouseY = e.clientY - 95;
-    mouseX = e.clientX - 95;
+    mouseY = e.clientY - 145;
+    mouseX = e.clientX - 145;
 
     pointer.style.maskPosition = `${mouseX}px ${mouseY}px`;
   }
 });
 
 dinosaurClick.addEventListener("click", (e) => {
-  let size = 100;
+  let size = 150;
   const maxSize = 2000;
-  const expansionRate = 20;
+  const expansionRate = 50;
 
   function animateCircle() {
     size += expansionRate;
 
     if (size <= maxSize) {
-      const gradient = `radial-gradient(circle ${size}px at ${mouseX + 95}px ${
-        mouseY + 95
+      const gradient = `radial-gradient(circle ${size}px at ${mouseX + 145}px ${
+        mouseY + 145
       }px, rgba(255, 255, 255, 0) 100%, rgba(0, 0, 0, 1))`;
 
       pointer.style.background = gradient;
@@ -50,10 +49,6 @@ dinosaurClick.addEventListener("click", (e) => {
 
     if (size >= maxSize) {
       stopMouse = false;
-      // setTimeout(() => {
-      //   resultContent.style.zIndex = 30;
-      //   resultContent.style.opacity = 1;
-      // }, 1000);
     }
   }
 
@@ -65,15 +60,8 @@ function moveDinosaur(index) {
     index = 0;
   }
 
-  dinosaur.style.top = position[index][0];
-  dinosaur.style.left = position[index][1];
-  dinosaur.style.width = position[index][2];
-  dinosaur.style.transform = position[index][3];
-
-  dinosaurClick.style.top = position[index][0];
-  dinosaurClick.style.left = position[index][1];
-  dinosaurClick.style.width = position[index][2];
-  dinosaurClick.style.transform = position[index][3];
+  dinosaur.style.cssText = position[index];
+  dinosaurClick.style.cssText = position[index];
 
   setTimeout(() => {
     moveDinosaur(index + 1);
