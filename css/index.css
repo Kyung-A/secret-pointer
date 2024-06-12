@@ -1,17 +1,14 @@
-@font-face {
-    font-family: 'SUIT-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
 html,
 body {
     position: relative;
     width: 100vw;
     height: 100vh;
-    font-family: 'SUIT-Regular';
-    letter-spacing: -30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'PyeongChangPeace';
+    letter-spacing: -20px;
     overflow: hidden;
 }
 
@@ -27,7 +24,8 @@ body {
     z-index: 5;
     overflow: hidden;
 
-    h1 {
+    .title {
+        position: relative;
         font-size: 15rem;
         text-align: center;
         line-height: 1.2;
@@ -35,37 +33,46 @@ body {
 }
 
 #pointer {
-    position: relative;
+    position: fixed;
     width: 200vw;
     height: 200vh;
     top: 0;
     left: 0;
     z-index: 10;
     background-color: black;
-    mask-image: radial-gradient(circle at 100px 100px, transparent 100px, #000 100px);
+    mask-image: radial-gradient(circle at 150px 150px, transparent 150px, #000 150px);
     transition: background 0.5s ease;
 }
 
 .text-ani-1 {
-    display: inline-block;
-    animation: shake 0.3s infinite;
-}
-
-.text-ani-2 {
-    display: inline-block;
-
+    display: block;
+    width: 100%;
+    color:rgb(0, 255, 221);
     &::after {
         content: "";
         animation: chang-text 2s infinite;
     }
+}
 
+.text-ani-2 {
+    position: absolute;
+    display: inline-block;
+    animation: change-font 2s infinite;
     &::first-letter {
-        font-weight: 600;
-        color: rgb(210, 255, 10)
+        color: rgb(210, 255, 10);
     }
 }
 
 .text-ani-3 {
+    padding-left: 230px;
+}
+
+.text-ani-4 {
+    display: inline-block;
+    animation: shake 0.3s infinite;
+}
+
+.text-ani-5 {
     display: inline-block;
     width: 130px;
     color: transparent;
@@ -85,7 +92,7 @@ body {
 
 #dinosaur-click {
     position: absolute;
-    width: 50px;
+    width: 80px;
     z-index: 15;
     cursor: pointer;
     img {
@@ -93,6 +100,7 @@ body {
         opacity: 0%;
     }
 }
+
 
 #hello-world {
     position: absolute;
@@ -120,6 +128,27 @@ body {
         img {
             width: 100%;
         }
+    }
+}
+
+@keyframes change-font {
+    0% {
+        font-family: 'PyeongChangPeace-Bold';
+    }
+    20% {
+        font-family: 'Cafe24Moyamoya-Regular-v1.0';
+    }
+    40% {
+        font-family: 'Giants-Inline';
+    }
+    60% {
+        font-family: 'PyeongChangPeace-Bold';
+    }
+    80% {
+        font-family: 'LOTTERIACHAB';
+    }
+    100% {
+        font-family: 'PyeongChangPeace-Bold';
     }
 }
 
@@ -171,23 +200,19 @@ body {
 
 @keyframes chang-text {
     0% {
-        content: "보이시나";
+        content: "무엇이";
     }
 
-    25% {
-        content: "이시나보";
+    35% {
+        content: "엇이무";
     }
 
-    50% {
-        content: "시나보이";
-    }
-
-    75% {
-        content: "나보이시";
+    70% {
+        content: "이무엇";
     }
 
     100% {
-        content: "보이시나";
+        content: "무엇이";
     }
 }
 
@@ -241,7 +266,7 @@ body {
     }
 
     80% {
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40px, rgb(0, 225, 255) 50px);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 20px, rgb(0, 225, 255) 50px);
         background-clip: text;
         -webkit-background-clip: text;
     }
