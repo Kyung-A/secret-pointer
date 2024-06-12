@@ -82,6 +82,18 @@ body {
     animation: fill-text-color 2s infinite;
 }
 
+.text-deco {
+    position: relative;
+    &::after {
+        font-family: 'Ycomputer-Regular';
+        position: absolute;
+        left: 0px;
+        top: 50px;
+        font-size: 10rem;
+        content: "썱";
+    }
+}
+
 .dinosaur {
     position: absolute;
     width: 80px;

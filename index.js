@@ -6,11 +6,11 @@ const position = [
   "margin-top: -160px; margin-right: -750px; width: 80px; transform: initial;",
   "margin-top: -290px; margin-left: -850px; width: 280px; transform: scale(-1, 1);",
   "margin-bottom: -430px; margin-left: -210px; width: 80px; transform: initial;",
-  "margin-right: -220px;  margin-bottom: -410px; width: 80px; transform: scale(-1, 1);",
+  "margin-right: -290px;  margin-bottom: -410px; width: 80px; transform: scale(-1, 1);",
   "margin-left: -1580px;  margin-top: -300px; width: 350px; transform: scale(-1, 1);",
-  "margin-right: -1580px;  margin-bottom: -300px; width: 350px; transform: initial;",
+  "margin-right: -1580px;  margin-bottom: -600px; width: 350px; transform: initial;",
   "margin-right: -1300px;  margin-top: -750px; width: 350px; transform: rotate(-180deg) scale(-1, 1);",
-  "margin-left: -1000px;  margin-top: 50px; width: 80px; transform: scale(-1, 1);",
+  "margin-left: -1070px;  margin-top: 50px; width: 80px; transform: scale(-1, 1);",
 ];
 
 let mouseY;
